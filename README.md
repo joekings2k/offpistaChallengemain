@@ -53,6 +53,11 @@ Uses **Supabase Auth** for user sign-up, login, and session management.
 - 📱 **Mobile responsiveness** – Further polish for mobile and tablet layouts.  
 - 🛡️ **Role-based access** – Admin and user roles for better permission management.
 - 📝 **Drag and Drop component for ordering tasks
+
+#🌐 Deployed App
+- https://offpista-challengemain.vercel.app
+
+
 ---
    
  
