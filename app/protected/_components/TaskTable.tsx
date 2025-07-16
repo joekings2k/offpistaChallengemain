@@ -8,26 +8,26 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { TaskType, TypeTaskStatus } from "@/types/types";
+import { TaskType } from "@/types/types";
 import {format} from "date-fns"
 
-import TaskStatusIndicator, { TaskStatusLabel } from "./TaskStatusIndicator";
+import TaskStatusIndicator from "./TaskStatusIndicator";
 import { Badge } from "@/components/ui/badge";
 import TableDropdown from "./TableDropdown";
 
 
-function getStatusColor(status: TaskType["status"]) {
-  switch (status) {
-    case TypeTaskStatus.done:
-      return "bg-green-500 text-white";
-    case TypeTaskStatus.inprogress:
-      return "bg-yellow-500 text-white";
-    case TypeTaskStatus.pending:
-      return "bg-blue-500 text-white";
-    default:
-      return "bg-gray-500 text-white";
-  }
-}
+// function getStatusColor(status: TaskType["status"]) {
+//   switch (status) {
+//     case TypeTaskStatus.done:
+//       return "bg-green-500 text-white";
+//     case TypeTaskStatus.inprogress:
+//       return "bg-yellow-500 text-white";
+//     case TypeTaskStatus.pending:
+//       return "bg-blue-500 text-white";
+//     default:
+//       return "bg-gray-500 text-white";
+//   }
+// }
 
 
 export default function TaskTable({ tasks }: { tasks: TaskType[] }) {

@@ -6,12 +6,12 @@ import {
   DialogFooter,
   DialogTitle,
   DialogDescription,
-  DialogTrigger,
+
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import TaskStatusDropDown from "./TaskStatusDropDown";
 import { useEffect, useState } from "react";
-import { createTask, getTask, updateTask } from "@/actions/task";
+import {  getTask, updateTask } from "@/actions/task";
 import { TaskType } from "@/types/types";
 import { useQuery } from "@tanstack/react-query";
 import { Skeleton } from "@/components/ui/skeleton";

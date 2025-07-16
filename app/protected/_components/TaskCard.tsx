@@ -9,20 +9,17 @@ import {
   CardContent,
 } from "@/components/ui/card";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectLabel,
   SelectValue,
 } from "@/components/ui/select";
 import { TaskType } from "@/types/types";
 import TaskTable from "./TaskTable";
-import { useQuery } from "@tanstack/react-query";
-import { getTasks } from "@/actions/task";
-import { Skeleton } from "@/components/ui/skeleton";
+
 
 export default function TasksCard({ tasks,selectedFilter }: { tasks: TaskType[],selectedFilter?:string }) {  //selectedFilter?:string is optional parameter for the filter select box. If not provided, it will be set to "all" by default.
 

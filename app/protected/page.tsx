@@ -12,12 +12,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { waitFor } from "@/lib/helper/waitfor";
 import Link from "next/link";
 
-export default async function ProtectedPage({
-  searchParams,
-}: {
-  searchParams: { status?: string };
+export default async function ProtectedPage(props: {
+
+  searchParams?: Promise<Record<string, string>>;
 }) {
-  const { status } = await searchParams;
+  const {  searchParams } = props;
+
+   // ✅ unwrap the promise
+  const resolvedSearchParams = searchParams ? await searchParams : {};
+  const status = resolvedSearchParams.status;
+  console.log("searchParams:", resolvedSearchParams);
   const supabase = await createClient();
 
   const { data, error } = await supabase.auth.getClaims();
@@ -50,7 +54,7 @@ export default async function ProtectedPage({
   );
 }
 
-export async function TaskComponent({ status }: { status?: string }) {
+ async function TaskComponent({ status }: { status?: string }) {
   const tasks = await getTasks(status);
   return <TasksCard tasks={tasks} />;
 }
